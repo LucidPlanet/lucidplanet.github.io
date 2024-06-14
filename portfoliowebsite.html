@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LucidPlanet Portfolio</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffdd57;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background: linear-gradient(to right, #ff69b4, #ff1493);
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            overflow: auto;
+            text-align: center;
+        }
+        .section {
+            background: #f0e68c;
+            padding: 2em;
+            margin: 1em 0;
+            border-radius: 8px;
+            border: 5px solid #ff4500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .social-links a {
+            color: #ff4500;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #ff69b4;
+        }
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 5px solid #ff4500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide iframe {
+            min-width: 100%;
+            height: 315px;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .client-name {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .review {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 2em;
+        }
+        .review-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: calc(30% - 20px);
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .review-box:hover {
+            transform: scale(1.05);
+        }
+        .review-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            display: block;
+            margin: 0 auto;
+        }
+        .stars {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+        .highlighted-word {
+            font-size: 1.25em;
+            font-weight: bold;
+            color: #ff4500; /* Highlight color */
+        }
+        .quote {
+            font-style: italic;
+        }
+                .hire-me-section {
+            text-align: center;
+            background-color: #f0e68c;
+            padding: 2em;
+            border-radius: 8px;
+            border: 5px solid #ff4500;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hire-me-section h2 {
+            margin: 0;
+            font-size: 2em;
+            color: #333;
+        }
+        .hire-me-section a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 1em 2em;
+            background-color: #ff4500;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .hire-me-section a:hover {
+            background-color: #e63e00;
+            transform: scale(1.1) rotate(-5deg);
+            animation: tilt 0.3s ease infinite alternate;
+        }
+        @keyframes tilt {
+            from {
+                transform: scale(1.1) rotate(-5deg);
+            }
+            to {
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+        .contact-me {
+            margin-top: 2em;
+        }
+        .contact-me p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+        .contact-me .social-links {
+            margin-top: 1em;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background: linear-gradient(to right, #ff69b4, #ff1493);
+            color: white;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        .animated-gif {
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LucidPlanet</h1>
+        <p>Freelance Video Editor</p>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>About Me</h2>
+            <p>Hi, I'm Lucid! I'm a freelance video editor with years of experience in Premiere Pro, Davinci Resolve, and PowerDirector18. I specialize in editing videos that are silly and entertaining in the form of full-length YouTube videos or short-form TikToks/Reels/YT Shorts. Content I have edited for various creators over the years have amassed over <span class="highlighted-word">142,000</span> views!</p>
+            <img src="https://media.giphy.com/media/13GIgrGdslD9oQ/giphy.gif" alt="Retro GIF" class="animated-gif">
+        </section>
+        <section class="section">
+            <h2>My Work</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide" id="carouselSlide">
+                    <!-- YouTube and TikTok Embeds -->
+                    <iframe src="https://www.youtube.com/embed/T5jmsJEJHHQ?si=s_X15erJMkYFRMch" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/NQJtluX3QjM?si=LZ17i9zyVQPRJXCc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.tiktok.com/embed/6935857912493477125" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.tiktok.com/embed/6969792464165047558" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.tiktok.com/embed/7105060219742457093" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-buttons">
+                    <button id="prevBtn">&#10094;</button>
+                    <button id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2>Client Reviews</h2>
+            <div class="review">
+                <div class="review-box">
+                    <div class="client-name">Sirenn_J</div>
+                    <a href="https://www.twitch.tv/sirenn_J" target="_blank">
+                        <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/b12f74e6-a14e-4e37-a631-60c68b0d2eb1-profile_image-70x70.png" alt="Client 1" class="review-image">
+                    </a>
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="quote">"Lucid's been a tremendous help everytime we've worked together. As someone who has always valued hard work and creativity, Lucid has always pulled through with meeting these values and providing 5 star service."</p>
+                </div>
+            </div>
+        </section>
+        <section class="hire-me-section">
+            <h2>Like what you see?</h2>
+            <a href="https://www.fiverr.com/ps2spooky4u" target="_blank">HIRE ME!</a>
+        </section>
+        <section class="section contact-me">
+            <h2>Contact Me</h2>
+            <p>You can message me on Twitter or send me a message on Discord.</p>
+            <div class="social-links">
+                <a href="https://twitter.com/LucidYGOPlayer" target="_blank">Twitter</a> | 
+                <a href="https://discord.com/users/521705478993084436" target="_blank">Discord: lucidpl</a> | 
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> LucidPlanet</p>
+    </footer>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>    
+    <script>
+        const carouselSlide = document.getElementById('carouselSlide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let counter = 0;
+
+        function updateCarouselSize() {
+            const size = carouselSlide.clientWidth;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        }
+
+        nextBtn.addEventListener('click', () => {
+            const size = carouselSlide.clientWidth;
+            if (counter >= carouselSlide.children.length - 1) return;
+            carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+            counter++;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+
+        prevBtn.addEventListener('click', () => {
+            const size = carouselSlide.clientWidth;
+            if (counter <= 0) return;
+            carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+            counter--;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+        });
+
+        window.addEventListener('resize', updateCarouselSize);
+    </script>
+</body>
+</html>
